@@ -1,25 +1,3 @@
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/92172698/212478747-4db80253-59a9-4702-b5a8-0cb2ecb7ef62.png">
-  <h2>
-    DiscordJS-Moderation-Bot 
-   </h2>
-   <h5>
-    The advanced Discord Moderation bot built with discord.js v14.  
-   </h5>
-</div>
-
-# Before getting started...
-## Copyright warning
-Everyone must understand that this project is owned by me (T.F.A#7524), and if I see anybody making a YouTube video about this project without linking this GitHub repository in the description, their video will be taken down by me. Learn [YouTube copyright](https://www.youtube.com/howyoutubeworks/policies/copyright/) and do not steal anybody's projects. Thank you for reading this.
-
-CHANGING MY NAME (T.F.A#7524) TO ANY OTHER USERNAME IS GOING TO BE AN INSTANT COPYRIGHT STRIKE. BE CAREFUL FROM GETTING A STRIKE FROM ME. I REPEAT, DO NOT CHANGE MY USERNAME. THIS IS NOT A JOKE.
-
-# DiscordJS-Moderation-Bot
-The best Discord Moderation bot that I have ever created, all made with discord.js version 14 and discord.js-v14-helper. This project requires MongoDB to connect to the database, so make sure to get a MongoDB URI! You can create many commands as you want to improve your bot, just make sure that your bot won't go crazy!
-
-#### Warning
-This project is made for single guild, and not a multi-guild one. I currently have a problem with Slash commands permissions, so I used role_perms property instead of them. If you have a solution, create a pull request.
-
 # Setup the project
 
 ## Dependencies installation:
