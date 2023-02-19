@@ -4,6 +4,17 @@ If you are trying to copy the ENTIRE project and then making a video about it, y
 # DiscordJS-Commands-Handler
 A unique & coolest Discord bot commands handler built with discord.js v14. It handlers **only** application commands, such as slash commands and context menu commands. So if you want prefix commands, then you can not use this project. By the way, if you want to connect to the database called MongoDB, it is already provided! Just provide your MongoDB URI in the configuration file.
 
+# Features
+## Handler features
+
+- Role permissions
+- Developers only perms
+- Owner only perms
+- Cooldown
+
+## Other features
+- Simple and cool help command
+
 # Setup the project
 
 ## Dependencies installation:
