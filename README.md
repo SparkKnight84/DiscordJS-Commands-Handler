@@ -12,8 +12,27 @@ A unique & coolest Discord bot commands handler built with discord.js v14. It ha
 - Owner only perms
 - Cooldown
 
+```js
+module.exports = {
+    name: String,
+    description: String,
+    type: Number,
+    options: [],
+    role_perms: [String],
+    developers_only: Boolean,
+    owner_only: Boolean,
+    cooldown: String,
+    category: String,
+    run: function (*args) {
+        
+    }
+}
+```
+
 ## Other features
 - Simple and cool help command
+
+![2023-02-19 13_12_29-Window](https://user-images.githubusercontent.com/92172698/219947272-6a4ed7af-1a37-473f-99d0-899fe25e7b71.png)
 
 # Setup the project
 
