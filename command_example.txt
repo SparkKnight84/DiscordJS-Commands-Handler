@@ -1,15 +1,16 @@
 const { } = require('discord.js');
 
 module.exports = {
-    name: '',
-    description: '',
-    type: 1,
-    options: [],
-    role_perms: [String],
-    developers_only: Boolean,
-    owner_only: Boolean,
-    category: String,
-    run: async (client, interaction, config) => {
+    name: '', // The application command name
+    description: '', // The application command description (not required for these types: 2, 3)
+    type: 1, // The application command type (Slash: 1, User: 2, Message: 3)
+    options: [], // The application command options (not required for these types: 2, 3)
+    role_perms: [String], // An array of available role IDs in your guild
+    developers_only: Boolean, // Allow for developers only
+    owner_only: Boolean, // Allow for the bot owner only
+    cooldown: String, // The cooldown of the command (ex: '10s', '1m'... etc)
+    category: String, // The command category (useless but required sometimes for /help or /commands command)
+    run: async (client, interaction, config) => { // The main function to execute the command code
         
     }
 };
