@@ -3,7 +3,7 @@
 </p>
 
 ## Read this!
-If you are trying to copy the ENTIRE project and then making a video about it, you will get a copyright strike by me if my credits aren't there. Please do some changes to your project so you don't get a copyright strike! If you did it, you can credit me in any time you want.
+If you are trying to copy the ENTIRE project and then making a video about it, you will get a copyright strike by me if my credits aren't there. To avoid this, edit the project and some of the features so you won't get a strike by me, thank you!
 
 # DiscordJS-Commands-Handler
 A unique & coolest Discord bot commands handler built with discord.js v14. It handlers **only** application commands, such as slash commands and context menu commands. So if you want prefix commands, then you can not use this project. By the way, if you want to connect to the database called MongoDB, it is already provided! Just provide your MongoDB URI in the configuration file.
@@ -86,4 +86,4 @@ The setup for now is for [Visual Studio Code](https://code.visualstudio.com/) us
 If you have an issue, do not start to panic! Create an issue right [here](https://github.com/TFAGaming/DiscordJS-Commands-Handler/issues) and wait for me or some people to respond to your errors.
 Please remember to not create an issue that includes "it's broken", "not working at all", or other similar comments like these, thank you.
 
-**Project made with ❤ by T.F.A#7524.** Make sure to credit to me when you are trying to make a clone of this handler, thank you!
+**Project made with ❤ by T.F.A#7524**.
