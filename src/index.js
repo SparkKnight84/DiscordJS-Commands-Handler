@@ -25,19 +25,6 @@ fs.readdirSync('./src/handlers').forEach((handler) => {
     require('./handlers/' + handler)(client, config);
 });
 
-process.on('unhandledRejection', (reason, promise) => {
-    console.error('[antiCrash] :: [unhandledRejection]');
-    console.log(promise, reason);
-});
-
-process.on("uncaughtException", (err, origin) => {
-    console.error('[antiCrash] :: [uncaughtException]');
-    console.log(err, origin);
-});
-
-process.on('uncaughtExceptionMonitor', (err, origin) => {
-    console.error('[antiCrash] :: [uncaughtExceptionMonitor]');
-    console.log(err, origin);
-});
+require('./error/main')();
 
 client.login(config.client.token);
