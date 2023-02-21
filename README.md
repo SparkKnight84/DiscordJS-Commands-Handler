@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/92172698/220339561-ac3c8034-dcb5-40e5-ae0b-4522638f4016.png">
+</p>
+
 ## Read this!
 If you are trying to copy the ENTIRE project and then making a video about it, you will get a copyright strike by me if my credits aren't there. Please do some changes to your project so you don't get a copyright strike! If you did it, you can credit me in any time you want.
 
