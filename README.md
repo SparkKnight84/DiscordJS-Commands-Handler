@@ -13,34 +13,46 @@ If you liked my repository, you can click on the button **⭐️ Star** to add a
 # Features
 If you are interesed in this project, here are the available features about this project.
 
-## Beginner friendly
-This code is not very complicated to understand, you just need some JavaScript acknowledgements to understand. 
+## Beginner friendly:
+This code is not very complicated to understand, you just need some JavaScript knowledgements to understand. 
 
-## Handler features
+## Application commands handler:
 
 - Role permissions
 - Developers only perms
 - Owner only perms
 - Cooldown
 
+Example command:
 ```js
 module.exports = {
-    name: String,
-    description: String,
-    type: Number,
-    options: [],
-    role_perms: [String],
-    developers_only: Boolean,
-    owner_only: Boolean,
-    cooldown: String,
-    category: String,
-    run: function (*args) {
+    name: 'say',
+    description: 'Repeat something!',
+    type: 1, // Type: Slash command
+    options: [
+        {
+            name: 'message',
+            description: 'The message to repeat.',
+            type: 3, // Type: String
+            required: true
+        }
+    ],
+    role_perms: [],
+    developers_only: false,
+    owner_only: false,
+    cooldown: '10s', // 10 seconds
+    category: 'Utility',
+    run: async (client, interaction) => {
+        const message = interaction.options.get('message').value;
         
+        return interaction.reply({
+            content: message
+        });
     }
 }
 ```
 
-## Other features
+## Other:
 - Simple and cool help command
 
 ![2023-02-19 13_12_29-Window](https://user-images.githubusercontent.com/92172698/219947272-6a4ed7af-1a37-473f-99d0-899fe25e7b71.png)
