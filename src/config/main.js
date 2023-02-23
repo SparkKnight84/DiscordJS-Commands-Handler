@@ -33,5 +33,9 @@ module.exports = {
           "YOU_CAN_ADD_MORE_IDS"
         ],
         owner: "YOUR_ACCOUNT_ID"
+    },
+    
+    channels: {
+        logging_channel: "THE_LOGGING_CHANNEL_ID (Not required)"
     }
 };
