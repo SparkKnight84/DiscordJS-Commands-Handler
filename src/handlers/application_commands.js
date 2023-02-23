@@ -17,6 +17,8 @@ module.exports = (client, config) => {
                     .log(true);
 
                 commands.push(pulled.command_data);
+                
+                client.commands.set(pulled.command_data.name, pulled);
             } else {
                 new BetterConsoleLogger('[WARN] Received empty property \'command_data\' invalid type (Object) in ' + file + '.')
                     .setTextColor(Colors.Red)
