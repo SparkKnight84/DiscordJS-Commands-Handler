@@ -22,35 +22,38 @@ This code is not very complicated to understand, you just need some JavaScript k
 - Developers only perms
 - Owner only perms
 - Cooldown
+- Logging system
 
-Example command:
+Example command: ([Application command structures](https://discord.com/developers/docs/interactions/application-commands))
 ```js
 module.exports = {
-    name: 'say',
-    description: 'Repeat something!',
-    type: 1, // Type: Slash command
-    options: [
-        {
-            name: 'message',
-            description: 'The message to repeat.',
-            type: 3, // Type: String
-            required: true
-        }
-    ],
-    role_perms: [],
-    developers_only: false,
-    owner_only: false,
-    cooldown: '10s', // 10 seconds
-    category: 'Utility',
-    run: async (client, interaction) => {
-        const message = interaction.options.get('message').value;
-        
-        return interaction.reply({
-            content: message
-        });
-    }
-}
+    command_data: { // An object of Application command structure data, from the Discord API (click on the link above)
+        name: String,
+        description: String,
+        type: Number,
+        options: Array[Object],
+    },
+    role_perms: Array[String], // The role permissions for members (role IDs allowed only).
+    developers_only: Boolean, // Whenever the command is for the bot developers or not.
+    owner_only: Boolean, // Whenever the command is for bot owner or not.
+    cooldown: String, // The cooldown of the command (ex: '1s', '10m', '1 week'... etc.).
+    logger: Boolean, // Enables the logging system (check configuration file and provide the channel ID).
+    category: String, // The command category (especially required for help command, if you want one).
+    run: function (...args) { } // The main function to execute the code, make sure to provide all the required args/parameters!
+};
 ```
+
+## Interactions handler (Buttons, String select menus... etc.):
+This handler handles all possible components interactions, just provide the interaction custom ID. Example:
+
+```js
+module.exports = {
+    customId: String, // The interaction customId.
+    run: function (...args) { } // The main function to execute the code, make sure to provide all the required args/parameters!
+};
+```
+
+![2023-02-23 18_52_26-Window](https://user-images.githubusercontent.com/92172698/220989378-9120506e-68fb-4e35-b79f-ebce4d073a94.png)
 
 ## Other:
 - Simple and cool help command
