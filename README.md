@@ -3,7 +3,11 @@
 </p>
 
 ## Read this!
+### Copyright:
 If you are trying to copy the ENTIRE project and then making a video about it, you will get a copyright strike by me if my credits aren't there. To avoid this, edit the project and some of the features so you won't get a strike by me, thank you!
+
+### The project:
+This handler works for in-guild bot, which means for a private bot. So if you are trying to make a public bot, well, you have to edit some of the files in the project... Good luck.
 
 # DiscordJS-Commands-Handler
 A unique & coolest Discord bot commands handler built with discord.js v14. It handlers **only** application commands, such as slash commands and context menu commands. So if you want prefix commands, then you can not use this project. By the way, if you want to connect to the database called MongoDB, it is already provided! Just provide your MongoDB URI in the configuration file.
