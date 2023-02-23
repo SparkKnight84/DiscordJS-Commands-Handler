@@ -11,35 +11,14 @@ module.exports = (client, config) => {
         for (let file of files) {
             let pulled = require('../commands/' + dir + '/' + file);
 
-            if (pulled.name && pulled.type) {
+            if (pulled.command_data && typeof pulled.command_data === 'object') {
                 new BetterConsoleLogger('Loaded application command: ' + file + '.')
                     .setTextColor(Colors.Green)
                     .log(true);
 
-                if (pulled.description) {
-                    commands.push(
-                        {
-                            name: pulled.name,
-                            description: pulled.description,
-                            type: 1,
-                            options: pulled.options ? pulled.options : null,
-                            default_permission: null,
-                            default_member_permissions: null, 
-                            nsfw: false
-                        }
-                    );
-                } else {
-                    commands.push(
-                        {
-                            name: pulled.name,
-                            type: pulled.type
-                        }
-                    );
-                };
-
-                client.commands.set(pulled.name, pulled);
+                commands.push(pulled.command_data);
             } else {
-                new BetterConsoleLogger('[!] Received empty property \'name\' or \'type\' in ' + file + '.')
+                new BetterConsoleLogger('[WARN] Received empty property \'command_data\' invalid type (Object) in ' + file + '.')
                     .setTextColor(Colors.Red)
                     .log(true);
 
@@ -51,6 +30,6 @@ module.exports = (client, config) => {
     const register = new ApplicationCommandsRegister(config.client.token, config.client.id)
         .setApplicationCommands(commands)
         .setRestVersion(10);
-    
-    register.start().catch((data) => console.log(data));
+
+    register.start().catch((data) => console.error(data.errors));
 };

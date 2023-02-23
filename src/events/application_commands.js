@@ -1,6 +1,7 @@
 const client = require('../index');
 const config = require('../config/main');
 const ms = require('ms');
+const { EmbedBuilder } = require('discord.js');
 
 const map_cooldown = new Map();
 
@@ -93,6 +94,36 @@ client.on('interactionCreate', async (interaction) => {
             };
 
             command.run(client, interaction, config);
+
+            if (command.logger && typeof command.logger === 'boolean') {
+                if (!config.channels?.logging_channel) return;
+
+                const channel = client.channels.cache.get(config.channels.logging_channel);
+
+                if (!channel) return;
+
+                return channel.send({
+                    embeds: [
+                        new EmbedBuilder()
+                            .setTitle('Application command used: ' + interaction.commandName)
+                            .setAuthor({
+                                name: client.user.username,
+                                iconURL: client.user.displayAvatarURL({ dynamic: true })
+                            })
+                            .setFields(
+                                {
+                                    name: 'User',
+                                    value: `${interaction.member} (\`${interaction.user.id}\`)`
+                                },
+                                {
+                                    name: 'Used on',
+                                    value: `<t:${Math.floor(interaction.createdTimestamp / 1000)}> (<t:${Math.floor(interaction.createdTimestamp / 1000)}:R>)`
+                                }
+                            )
+                            .setColor('Blue')
+                    ]
+                }).catch(() => { });
+            };
         } catch (err) {
             console.warn(`[WARN] Failed to run the command \'${interaction.commandName}\'.`);
             console.log(err);

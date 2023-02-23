@@ -6,6 +6,7 @@ const config = require('./config/main');
 const client = new Client(config.client.constructor);
 
 client.commands = new Collection();
+client.interactions = new Collection();
 
 module.exports = client;
 
@@ -22,6 +23,10 @@ Thank you for using T.F.A#7524's project! :)`)
     .log(true);
 
 fs.readdirSync('./src/handlers').forEach((handler) => {
+    new BetterConsoleLogger('[INFO] Handler loaded: ' + handler)
+        .setTextColor(Colors.Bright_yellow)
+        .log(true);
+
     require('./handlers/' + handler)(client, config);
 });
 

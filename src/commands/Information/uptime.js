@@ -1,10 +1,12 @@
 const { EmbedBuilder, codeBlock } = require('discord.js');
 
 module.exports = {
-    name: 'uptime',
-    description: 'Check the client\'s uptime.',
-    type: 1,
-    options: [],
+    command_data: {
+        name: 'uptime',
+        description: 'Check the client\'s uptime.',
+        type: 1,
+        options: [],
+    },
     role_perms: null,
     developers_only: false,
     cooldown: '5s',
