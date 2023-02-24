@@ -93,7 +93,4 @@ The setup for now is for [Visual Studio Code](https://code.visualstudio.com/) us
 If you have an issue, do not start to panic! Create an issue right [here](https://github.com/TFAGaming/DiscordJS-Commands-Handler/issues) and wait for me or some people to respond to your errors.
 Please remember to not create an issue that includes "it's broken", "not working at all", or other similar comments like these, thank you.
 
-## Statistics:
-<img src="https://starchart.cc/TFAGaming/DiscordJS-Commands-Handler.svg">
-
 **Project made with ❤ by T.F.A#7524**.
