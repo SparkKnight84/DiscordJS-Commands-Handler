@@ -67,7 +67,7 @@ module.exports = {
 # Setup the project
 
 ## Dependencies installation:
-Firstly, install `package-lock.json` file:
+Firstly, initialize the project (install `package-lock.json`):
 ```shell
 npm init -y
 ```
