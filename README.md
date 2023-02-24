@@ -28,7 +28,7 @@ This code is not very complicated to understand, you just need some JavaScript k
 - Cooldown
 - Logging system
 
-Example command: ([Application command structures](https://discord.com/developers/docs/interactions/application-commands))
+Example command: ([Application command structures](https://discord.com/developers/docs/interactions/application-commands#application-command-object-application-command-structure))
 ```js
 module.exports = {
     command_data: { // An object of Application command structure data, from the Discord API (click on the link above)
