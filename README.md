@@ -14,6 +14,9 @@ A unique & coolest Discord bot commands handler built with discord.js v14. It ha
 
 If you liked my repository, you can click on the button **⭐️ Star** to add a new star, thank you!
 
+> **Info**
+If you are interesed about TypeScript Discord bots, you can view this project: [Click here](https://github.com/TFAGaming/DiscordTS-Template)
+
 # Features
 If you are interesed in this project, here are the available features about this project.
 
