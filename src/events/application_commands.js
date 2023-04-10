@@ -24,45 +24,55 @@ client.on('interactionCreate', async (interaction) => {
                 };
             };
 
-            if (command.developers_only && typeof command.owner_only === 'boolean') {
-                if (config.users?.developers && config.users?.developers?.length > 0) {
-                    if (!config.users.developers.some((dev) => interaction.user.id === dev)) return interaction.reply({
-                        content: `\`❌\` Sorry but this command is restricted for developers only!`,
-                        ephemeral: true
-                    });
-                };
-            };
-
-            if (command.role_perms) {
-                if (Array.isArray(command.role_perms)) {
-                    if (command.role_perms?.length > 0) {
-                        let boolean = false;
-
-                        await command.role_perms.forEach((r) => {
-                            const role = interaction.guild.roles.cache.get(r);
-
-                            if (!role) return;
-
-                            if (!interaction.member.roles) boolean = false;
-                            if (interaction.member.roles.cache.some((r1) => r1.id === role.id)) boolean = true;
-                        });
-
-                        if (boolean === false) return interaction.reply({
-                            content: `\`❌\` Sorry but you are not allowed to use this command!`,
+            if (command.developers_only === true && Array.isArray(config.users?.developers) && config.users.developers.length > 0) {
+                if (!config.users.developers.includes(interaction.user.id)) {
+                    try {
+                        await interaction.reply({
+                            content: `\`❌\` Sorry but this command is restricted for developers only!`,
                             ephemeral: true
                         });
-                    };
+                    } catch (error) {
+                        console.error(`Failed to send interaction reply: ${error}`);
+                    }
+                    return;
+                }
+            }
+            
+            
+            if (command.role_perms) {
+                let boolean = false;
+            
+                if (Array.isArray(command.role_perms)) {
+                    if (command.role_perms.length > 0) {
+                        await Promise.all(command.role_perms.map(async (r) => {
+                            const role = interaction.guild.roles.cache.get(r);
+            
+                            if (role && interaction.member.roles.cache.some((r1) => r1.id === role.id)) {
+                                boolean = true;
+                            }
+                        }));
+                    }
                 } else if (typeof command.role_perms === 'string') {
                     const role = interaction.guild.roles.cache.get(command.role_perms);
-
-                    if (role) {
-                        if (!interaction.member.roles.cache.has(role)) return interaction.reply({
+            
+                    if (role && interaction.member.roles.cache.has(role.id)) {
+                        boolean = true;
+                    }
+                }
+            
+                if (!boolean) {
+                    try {
+                        await interaction.reply({
                             content: `\`❌\` Sorry but you are not allowed to use this command!`,
                             ephemeral: true
                         });
-                    };
-                };
-            };
+                    } catch (error) {
+                        console.error(`Failed to send interaction reply: ${error}`);
+                    }
+                    return;
+                }
+            }
+            
 
             if (command.cooldown && typeof command.cooldown === 'string') {
                 const milliseconds = ms(command.cooldown);
