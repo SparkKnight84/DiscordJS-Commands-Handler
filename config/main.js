@@ -11,8 +11,8 @@ module.exports = {
             presence: {
                 activities: [
                     {
-                        name: 'Hello world!',
-                        type: 0
+                        name: 'Joe Mama',
+                        type: 3
                     }
                 ],
                 status: 'online'
@@ -24,7 +24,7 @@ module.exports = {
 
     // Database:
     database: {
-        mongodb_uri: "YOUR_MONGODB_URI (Not required)"
+        mongodb_uri: ""
     },
 
     // Users:
@@ -34,6 +34,6 @@ module.exports = {
     },
     
     channels: {
-        logging_channel: "THE_LOGGING_CHANNEL_ID (Not required)"
+        logging_channel: "812274789396906016"//"808247295953862667"
     }
 };
