@@ -1,5 +1,6 @@
 const { GatewayIntentBits, Partials } = require('discord.js');
 const { ClientIntents, ClientPartials } = require('discord.js-v14-helper');
+require("dotenv").config()
 
 module.exports = {
     // Client configuration:
@@ -17,8 +18,8 @@ module.exports = {
                 status: 'online'
             }
         },
-        token: "YOUR_BOT_TOKEN",
-        id: "YOUR_BOT_ID"
+        token: process.env.TOKEN,
+        id: process.env.ID
     },
 
     // Database:
@@ -28,11 +29,8 @@ module.exports = {
 
     // Users:
     users: {
-        developers: [
-          "YOUR_ACCOUNT_ID",
-          "YOU_CAN_ADD_MORE_IDS"
-        ],
-        owner: "YOUR_ACCOUNT_ID"
+        developers: [],
+        owner: "520580249252265995"
     },
     
     channels: {
