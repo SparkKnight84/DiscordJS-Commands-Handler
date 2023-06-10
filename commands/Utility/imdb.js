@@ -41,6 +41,7 @@ module.exports = {
                     await interaction.reply('Oops! Failed to retrieve the screenshot. Please try again later.');
                 }
             } else {
+                console.log(response)
                 await interaction.reply('Oops! Failed to take a screenshot. Please make sure the URL is valid and try again.');
             }
         } catch (error) {
