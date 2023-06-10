@@ -9,7 +9,7 @@ module.exports = {
     },
     role_perms: null,
     developers_only: false,
-    cooldown: '5s',
+    cooldown: '',
     category: 'Utility',
     run: async (client, interaction) => {
         const date = new Date().getTime();

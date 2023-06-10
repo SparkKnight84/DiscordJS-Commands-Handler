@@ -138,7 +138,7 @@ client.on('interactionCreate', async (interaction) => {
             console.warn(`[WARN] Failed to run the command \'${interaction.commandName}\'.`);
             console.log(err);
         } finally {
-            console.log(`[INFO] ${interaction.user.username} has used the command \'${interaction.commandName}\'.`);
+            // console.log(`[INFO] ${interaction.user.username} has used the command \'${interaction.commandName}\'.`);
         };
     } else return;
 });
