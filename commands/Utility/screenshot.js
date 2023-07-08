@@ -39,7 +39,7 @@ module.exports = {
             await interaction.reply({
                 // embeds: [
                 //     (new EmbedBuilder).setImage("attachment://screenshot.png")
-                // ],
+                // ],test
                 files: [{ attachment: image, name: 'screenshot.png' }]
             })
         } catch (error) {
